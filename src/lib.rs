@@ -83,8 +83,13 @@ pub type Index = u32;
 
 #[cfg(feature = "std")]
 pub use rpc::XtStatus;
-use sp_runtime::traits::{Header, Block};
-use sp_runtime::DeserializeOwned;
+#[cfg(feature = "std")]
+use sp_runtime::{
+    traits::{Block, Header},
+    DeserializeOwned,
+};
+
+#[cfg(feature = "std")]
 use serde_json::Value;
 
 //fixme: make generic
